@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,400italic,500,500italic,700,700italic|Roboto:400,400italic,500,500italic,700,700italic" rel="stylesheet" type="text/css">
+        <link type="text/css" rel="stylesheet" href="style.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+        
+    </head>
+    
+    <body>
+      
+        
+ <div id="stage">
+    <div id="container">
+      <div id="gameIntro">
+        <img class="img-forum-banner my-16" src="Logos/SuperForum in blue.png" alt="SuperCar Blondie Forum logo">
+         <img class="front-page-gif mx-auto mb-16" src="Logos/lamborghini-racing.gif" alt="animated car">
+         <img class="img-fancy-button" id="title" src="Logos/startButton.png" alt="Fancy Start Button">
+      </div>
+      <div id="gameContainer">
+         <div id="gameHeader">
+           <div class="left questions">
+             <div class="container"><img></img></div>
+           </div>
+           <div class="left timer">
+             <div class="container">TIME: <span></span></div>
+           </div>
+           <div class="left score">
+             <div class="container">SCORE: <span></span></div>
+           </div>
+           <div class="left version">
+            <div class="container">V1.5 <span></span></div>
+           </div>
+         </div>
+         <div id="gameChoices">
+           <div class="row">
+             <div class="left half">
+               <div class="container"><button id="buttonOne" data-index="0"></button></div>
+             </div>
+             <div class="left half">
+               <div class="container"><button id="buttonTwo" data-index="1"></button></div>
+             </div>
+           </div>
+           <div class="row">
+             <div class="left half">
+               <div class="container"><button id="buttonThree" data-index="2"></button></div>
+             </div>
+             <div class="left half">
+               <div class="container"><button id="buttonFour" data-index="3"></button></div>
+             </div>
+           </div>
+         </div>
+         <h1 class="" id="title">SUPERCAR TRIVIA GAME</h1>
+      </div>
+      
+      <button class="my-16" id="startButton">START</button>
+      
+    </div>
+    <div> 
+     
+    </div>
+
+  </div>
+  <div id="modal_window">
+   <div class="modal_message">
+     <p></p>
+     
+  </div>
+  
+  
+  <script src="yeahman.js"></script>
+  
+    </body>
+   
+</html>
