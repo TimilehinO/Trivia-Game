@@ -22,7 +22,7 @@ var animationSetup = false;
    buttonThree = document.getElementById('buttonThree'),
    buttonFour = document.getElementById('buttonFour'),
    buttonArray = [buttonOne, buttonTwo, buttonThree, buttonFour],
-   modal_window = document.getElementById('modal_window')
+   modal_window = document.getElementById('modal_window'),
    startAnimation = new TimelineMax({repeat:0}),
    gameIndex = 0,
    actualScore = 0,
@@ -73,26 +73,21 @@ var animationSetup = false;
     for (var i = 0; i < buttonArray.length; i++) {
       buttonArray[i].addEventListener('click', self.anwerClicked, false);
     }
-    
-    
-    
-    
-
    };
 
    /**
     * Called everytime the window resizes to calculate new dimensions
     **/
    self.windowWasResized = function() {
-    stage.style.height = (h -20) +'px';
-    stage.style.width = (w - 20) + 'px';
+    stage.style.height = (h -0) +'px';
+    stage.style.width = (w -0) + 'px';
    };
 
    /**
     * Setup the stage and fire off the stage animations
     **/
    self.startGamePlay = function() {
-
+    
     // Get the game indexes
     self.generateGameIndexes();
  
@@ -103,7 +98,6 @@ var animationSetup = false;
     timerSpan[0].textContent = timerIndex;
 
     startAnimation.to([startButton, title], 1, {alpha:0});
-    startAnimation.to([startButton, title], 0.1, {css:{display:'none'}});
     startAnimation.to([startButton, title], 0.1, {css:{display:'none'}});
     startAnimation.to([gameIntro, title], 0.1, {css:{display:'none'}});
     startAnimation.to([gameHeader, gameChoices], 0.1, {css:{display:'block'}, onComplete:self.fireOffGameLogic});
@@ -130,12 +124,16 @@ var animationSetup = false;
     t[0].src = ques;
     // Add answers to buttons
     var ans = answers[gameQuestions[gameIndex]];
+    
     for (var i = 0; i < ans.length; i++) {
       var a = ans[i];
       buttonArray[i].textContent = a;
       
     }
+    console.log("it is time to change to a new answer")
+    
    };
+   
    /**
     * Called to start a gameplay timer that runs every second
     **/
@@ -149,6 +147,11 @@ var animationSetup = false;
     timerIndex--;
     if (timerIndex == -1) {
       timerIndex = 6;
+      buttonArray.forEach((element)=>{
+        element.removeAttribute("disabled");
+        element.classList.remove("selected-answer", "correct", "incorrect");
+        e.target.setAttribute("disabled", false);
+      }) 
       gameIndex++;
     } 
  
@@ -159,9 +162,11 @@ var animationSetup = false;
       return;
     } else if(timerIndex == 6){
       self.setupUserInterfaceWithData();
+      
     }
     // Display updated time
     timerSpan[0].textContent = timerIndex;
+    
    };
 
    /**
@@ -177,27 +182,41 @@ var animationSetup = false;
     var answerIndex = Number(e.target.getAttribute('data-index'));
     // Get the actual answer index 
     var actualCorrectAnswerIndex = gameAnswers[gameIndex];
+    // Set Diabled Attributes on each button except the correct or wrong answer
+      console.log("I clicked on", e.target.innerHTML)
+      e.target.classList.add("selected-answer");
+      
+      buttonArray.forEach((element)=>{
+        element.setAttribute("disabled", true);
+        
+      })
 
+      e.target.setAttribute("disabled", false);
+      
+  
     // Correct answer
     if (actualCorrectAnswerIndex == answerIndex) {
       rightAnswer.play();
       actualScore += 20;
       scoreSpan[0].textContent = actualScore;
       cancelButtons = false;
+      e.target.classList.add("correct");
+      
       
       self.dispatch_modal('THE ANSWER IS:  <span class="correct">CORRECT!</span>', 200);
       // document.getElementById("buttonArray").disabled = true;
     // Incorrect Answer
-    }
-     else {
+    } else {
       wrongAnser.play();
       actualScore -= 20;
       scoreSpan[0].textContent = actualScore;
       cancelButtons = false;
+      e.target.classList.add("incorrect");
       
       self.dispatch_modal('THE ANSWER IS: <span class="incorrect">INCORRECT!</span>', 200);
       // document.getElementById("buttonArray").disabled = true;
     }
+
    }
 
    /**
@@ -232,7 +251,7 @@ var animationSetup = false;
    };
 
   /**
-   * Credit for the idea about fade_in and fade_out to Todd Motto
+  
    * fade_in function emulates the fadeIn() jQuery function
    */
    self.fade_in = function(time, elem, flag) {
@@ -262,7 +281,7 @@ var animationSetup = false;
 
   /**
    *  
-   * Credit for the idea about fade_in and fade_out to Todd Motto
+   
    * fade_out function emulates the fadeOut() jQuery function
    */
    self.fade_out = function(time, elem) {
@@ -338,6 +357,12 @@ var animationSetup = false;
     gameQuestions = [];
     // Get the game indexes
     self.generateGameIndexes();
+
+    buttonArray.forEach((element)=>{
+      element.removeAttribute("disabled");
+      element.classList.remove("selected-answer", "correct", "incorrect");
+
+    }) 
  
     // Add data to the interface
     self.setupUserInterfaceWithData();

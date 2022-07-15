@@ -19,7 +19,7 @@ body{
   }
   
   #container {
-    padding: 30px;
+    padding: 5px;
   }
   
   #gameContainer h1 {
@@ -47,9 +47,19 @@ body{
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+   
   }
 
-  
+  .paypal-donations {
+    height: auto; 
+    width: auto; 
+    max-width: 200px; 
+    max-height: 200px;
+    display: block;
+    position: static;
+    transform: translate(-3%, 440%);
+    margin: 0 auto;
+  }
 
   
   /* Core Game Element Styles */
@@ -58,7 +68,7 @@ body{
   }
   
   .container {
-    padding:30px;
+    padding:28px;
   }
   
   #gameChoices button {
@@ -71,12 +81,12 @@ body{
     border:none;
     
     background-color: #ffffff;
-    height: 10%;
+    height: 9%;
     display: block;
     color: rgb(28, 29, 29);
     cursor: pointer;
     
-    padding: 20px;
+    padding: 10px;
     font-family: "Roboto Mono", Roboto, sans-serif;
     font-weight: 400;
   }
@@ -84,6 +94,18 @@ body{
   #gameChoices button:hover {
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.26), 0 4px 15px 0 rgba(0, 0, 0, 0.26);
     background-color:#33bdfd;
+  }
+  #gameChoices button.selected-answer{
+    color: white;
+  }
+  #gameChoices button.selected-answer.correct{
+    background-color: rgb(44, 196, 44);
+  }
+  #gameChoices button.selected-answer.incorrect{
+    background-color: rgb(255, 56, 56);
+  }  
+  #gameChoices button[disabled="true"]{
+    opacity: 0.1;
   }
   
   .left {
@@ -111,12 +133,12 @@ body{
   
   .timer {
     width: 20%;
-    margin-top: 2%;
+    margin-top: 6%;
     float:left;
     display: block;
     margin-left: 35%;
     margin-right: 0%;
-  
+    
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: 26px;
     color: #fff;
@@ -124,7 +146,7 @@ body{
   
   .score {
     width: 40%;
-    margin-top: 2%;
+    margin-top: 6%;
     margin-left: -5%;
     float:left;
     display: block;
@@ -154,6 +176,8 @@ body{
     z-index: -900;
     width: 200px;
   }
+
+  
 
   #title{
     font-family: "copperplate", "Courier New", fantasy;
