@@ -1,94 +1,109 @@
-<html>
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-        <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-        <script src="https://cdn.tailwindcss.com"></script>
+<html lang="en">
 
-        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,400italic,500,500italic,700,700italic|Roboto:400,400italic,500,500italic,700,700italic" rel="stylesheet" type="text/css">
-        <link type="text/css" rel="stylesheet" href="style.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        
-        
-    </head>
-    
-    <body>
-      
-        
- <div id="stage">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,400italic,500,500italic,700,700italic|Roboto:400,400italic,500,500italic,700,700italic"
+          rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>SUPERCAR TRIVIA GAME</title>
+
+</head>
+
+<body>
+
+
+<div id="stage">
     <div id="container">
-      <div id="gameIntro">
+        <div id="gameIntro">
 
-        <a href=”http://www.supercarblondieforum.com”> 
-          <img class="max-w-xs" src="Logos/SuperForum in blue.png" alt="SuperCar Blondie Forum logo">  
-       </a>
-    
-        
-         <img class="front-page-gif mx-auto mb-16" src="Logos/lamborghini-racing.gif" alt="animated car">
-         <img class="img-fancy-button" id="title" src="Logos/startButton.png" alt="Fancy Start Button">
-      </div>
-      <div id="gameContainer">
-         <div id="gameHeader">
-           <div class="left questions">
-             <div class="container"><img></img></div>
-           </div>
-           <div class="left timer">
-             <div class="container">TIME: <span></span></div>
-           </div>
-           <div class="left score">
-             <div class="container">SCORE: <span></span></div>
-           </div>
-           <div class="left version">
-            <div class="container">V1.5 <span></span></div>
-           </div>
-         </div>
-         <div id="gameChoices">
-           <div class="row">
-             <div class="left half">
-               <div class="container"><button id="buttonOne" data-index="0"></button></div>
-             </div>
-             <div class="left half">
-               <div class="container"><button id="buttonTwo" data-index="1"></button></div>
-             </div>
-           </div>
-           <div class="row">
-             <div class="left half">
-               <div class="container"><button id="buttonThree" data-index="2"></button></div>
-             </div>
-             <div class="left half">
-               <div class="container"><button id="buttonFour" data-index="3"></button></div>
-             </div>
-           </div>
-         </div>
-         <h1 class="mb-8" id="title">SUPERCAR TRIVIA GAME</h1>
-      </div>
-      <div class="block my-16">
-        <button class="my-16" id="startButton">START</button>
-      </div>
-    
-      
+            <a href=”http://www.supercarblondieforum.com”>
+                <img class="max-w-xs" src="Logos/SuperForum in blue.png" alt="SuperCar Blondie Forum logo">
+            </a>
+
+            <img class="front-page-gif mx-auto mb-16" src="Logos/lamborghini-racing.gif" alt="animated car">
+
+        </div>
+        <div id="gameContainer">
+            <div id="gameHeader">
+                <div class="left questions">
+                    <div class="container"><img></img></div>
+                </div>
+                <div class="left timer">
+                    <div class="container">TIME: <span></span></div>
+                </div>
+                <div class="left score">
+                    <div class="container">SCORE: <span></span></div>
+                </div>
+                <div class="left version">
+                    <div class="container">V1.5 <span></span></div>
+                </div>
+            </div>
+            <div id="gameChoices">
+                <div class="row">
+                    <div class="left half">
+                        <div class="container">
+                            <button id="buttonOne" data-index="0"></button>
+                        </div>
+                    </div>
+                    <div class="left half">
+                        <div class="container">
+                            <button id="buttonTwo" data-index="1"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="left half">
+                        <div class="container">
+                            <button id="buttonThree" data-index="2"></button>
+                        </div>
+                    </div>
+                    <div class="left half">
+                        <div class="container">
+                            <button id="buttonFour" data-index="3"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h1 class="title">SUPERCAR TRIVIA GAME</h1>
+        </div>
+
+        <div class="container w-full h-24 p-1 overflow-hidden grid grid-cols-1 justify-items-center content-center ">
+            <div class="h-24 w-32 relative">
+                <img class="object-contain h-full w-full z-0" id="title" src="Logos/startButton.png"
+                     alt="Fancy Start Button">
+                <button class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" id="startButton">
+                    START
+                </button>
+            </div>
+        </div>
     </div>
-    <div> 
-      <div>
-        <a href="https://paypal.me/Oyediran?country.x=US&locale.x=en_US">
-        <img href="https://paypal.me/Oyediran?country.x=US&locale.x=en_US" class="paypal-donations" src="Logos/payPal.png" alt="sticker">
-      </a>
-     </div>
+    <div class="container mx-auto p-1">
+        <div class="mx-auto w-32">
+            <a href="https://paypal.me/Oyediran?country.x=US&locale.x=en_US">
+                <img class="paypal-donations object-cover"
+                     src="Logos/payPal.png" alt="sticker">
+            </a>
+        </div>
     </div>
 
-  </div>
-  <div id="modal_window">
-   <div class="modal_message">
-     <p></p>
-     
-  </div>
-  
-  
-  <script src="yeahman.js"></script>
-  
-    </body>
-   
+</div>
+
+<div id="modal_window">
+    <div class="modal_message">
+        <p></p>
+    </div>
+</div>
+
+<script src="yeahman.js"></script>
+
+</body>
 </html>

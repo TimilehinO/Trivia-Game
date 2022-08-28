@@ -6,9 +6,9 @@ body{
     font-family: "Roboto Mono", Roboto, sans-serif;
     font-weight: 400;
   }
-  
+
   /* Stage Structure Styles */
-  
+
   #stage {
     width: 100%;
     height: 100%;
@@ -17,18 +17,18 @@ body{
     position: fixed;
     top:0;
   }
-  
+
   #container {
     padding: 5px;
   }
-  
+
   #gameContainer h1 {
     text-align: center;
     font-size: 54px;
     padding: 0;
     color: #fff;
   }
-  
+
   #gameHeader {
     display: none;
     padding: 0 20px;
@@ -47,30 +47,30 @@ body{
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-   
+
   }
 
-  .paypal-donations {
-    height: auto; 
-    width: auto; 
-    max-width: 200px; 
-    max-height: 200px;
-    display: block;
-    position: static;
-    transform: translate(-3%, 440%);
-    margin: 0 auto;
-  }
+  /*.paypal-donations {*/
+  /*  height: auto; */
+  /*  width: auto; */
+  /*  max-width: 200px; */
+  /*  max-height: 200px;*/
+  /*  display: block;*/
+  /*  position: static;*/
+  /*  transform: translate(-3%, 440%);*/
+  /*  margin: 0 auto;*/
+  /*}*/
 
-  
+
   /* Core Game Element Styles */
   #gameChoices {
     display: none;
   }
-  
+
   .container {
     padding:28px;
   }
-  
+
   #gameChoices button {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     line-height: 32px;
@@ -79,18 +79,18 @@ body{
     width: 100%;
     outline:none;
     border:none;
-    
+
     background-color: #ffffff;
     height: 9%;
     display: block;
     color: rgb(28, 29, 29);
     cursor: pointer;
-    
+
     padding: 10px;
     font-family: "Roboto Mono", Roboto, sans-serif;
     font-weight: 400;
   }
-  
+
   #gameChoices button:hover {
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.26), 0 4px 15px 0 rgba(0, 0, 0, 0.26);
     background-color:#33bdfd;
@@ -103,16 +103,16 @@ body{
   }
   #gameChoices button.selected-answer.incorrect{
     background-color: rgb(255, 56, 56);
-  }  
+  }
   #gameChoices button[disabled="true"]{
     opacity: 0.1;
   }
-  
+
   .left {
     float: left;
     display: block;
   }
-  
+
   .questions {
     width: 60%;
     height: 40%;
@@ -124,13 +124,13 @@ body{
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   }
 
-  
-  
+
+
   .questions span {
     color: #ff5722;
     font-size: 26px;
   }
-  
+
   .timer {
     width: 20%;
     margin-top: 6%;
@@ -138,12 +138,12 @@ body{
     display: block;
     margin-left: 35%;
     margin-right: 0%;
-    
+
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: 26px;
     color: #fff;
   }
-  
+
   .score {
     width: 40%;
     margin-top: 6%;
@@ -177,40 +177,37 @@ body{
     width: 200px;
   }
 
-  
+
 
   #title{
     font-family: "copperplate", "Courier New", fantasy;
   }
-  
+
+  .title {
+    font-family: "copperplate", "Courier New", fantasy;
+  }
+
   .half {width: 50%;}
-  
+
   #startButton {
-    
+
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-    width: 200px;
-    height: 100px;
     border-radius: 100px / 50px;
-    position: fixed;
-    left: 50%;
-    bottom: 225px;
-    transform: translate(-50%, -50%);
     margin: 0 auto;
-    width: 20%;
     color:rgba(255, 255, 255, 0.801);
-    font-size: 48px;
-    padding: 0px;
+    font-size: 2rem;
+    padding: 0;
     cursor: pointer;
     font-family: "Times New Roman", Times, serif;
     font-weight: 400;
-    
+
   }
-  
+
   #startButton:hover {
     color:#fff;
-    
+
   }
-  
+
   /* Modal Window Styles */
   #modal_window{
     position: absolute;
@@ -223,23 +220,23 @@ body{
     display: none;
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.26);
   }
-  
+
   .modal_message{
     padding:10px 20px;
   }
-  
+
   .modal_message p {
     color:#fff;
   }
-  
+
   .modal_message h2 {
     color: #fff;
   }
-  
+
   .modal_message span {
     float: right;
   }
-  
+
   .modal_message div button {
     margin-bottom: 20px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -259,26 +256,26 @@ body{
     font-family: "Roboto Mono", Roboto, sans-serif;
     font-weight: 400;
   }
-  
+
   .modal_message div button:hover {
     box-shadow: 0 5px 11px 0 rgba(104, 104, 104, 0.26), 0 4px 15px 0 rgba(82, 82, 82, 0.26);
     background-color: #92edfd;
   }
-  
+
   .modal_message div button.twitter {
     background-color: #55acee;
     margin-right: 38px;
   }
-  
+
   .modal_message div button.twitter:hover {
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.26), 0 4px 15px 0 rgba(0, 0, 0, 0.26);
     background-color: #83c3f3
   }
-  
+
   .modal_message span.correct {
     color:#4caf50;
   }
-  
+
   .modal_message span.incorrect {
     color:#f44336;
   }
